@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
-#import <SocketIO/SocketIO-Swift.h>
-#import "SVProgressHUD.h"
+#import <AFNetworking/AFNetworking.h>
+//#import "SVProgressHUD.h"
 
 @interface KKPlatformHttpSessionManager:AFHTTPSessionManager
 
@@ -23,7 +22,6 @@
 @property (nonatomic, strong) KKPlatformHttpSessionManager *platformManager;
 
 //websocket
-@property (nonatomic, strong) SocketManager *socketManager;
 
 /*
  *通过baseUrl初始化
