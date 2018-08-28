@@ -41,7 +41,7 @@ This is a network component.
   #
 
   #spec.license      = "MIT (example)"
-  spec.license      = { :type => "LICENSE", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "LICENSE", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
