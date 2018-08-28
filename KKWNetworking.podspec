@@ -119,7 +119,7 @@ This is a network component.
   #
 
   # spec.framework  = "SomeFramework"
-  #spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
+  # spec.frameworks = "AFNetworking","SDWebImage","SVProgressHUD",
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -131,9 +131,9 @@ This is a network component.
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # spec.requires_arc = true
-  # s.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
+  spec.requires_arc = true
+  s.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  spec.dependency "AFNetworking","Socket.IO-Client-Swift","SVProgressHUD"
 
 end
