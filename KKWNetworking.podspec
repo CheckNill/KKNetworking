@@ -132,7 +132,7 @@ This is a network component.
   #  you can include multiple dependencies to ensure it works.
 
    spec.requires_arc = true
-   s.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
+  # s.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
 
