@@ -29,7 +29,7 @@ KKNetworking is a Network tool for our application,
 This is a network component.
                    DESC
 
-  spec.homepage     = "https://github.com/CheckNill/KKNetworking"
+  spec.homepage     = "https://github.com/CheckNill/KKWNetworking"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -119,7 +119,7 @@ This is a network component.
   #
 
   # spec.framework  = "SomeFramework"
-   spec.frameworks = "MQTTClient", "MQTTClient/Websocket","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD"
+   spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
