@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
-#import <SocketIO/SocketIO-Swift.h>
-#import "SVProgressHUD.h"
+
 
 @interface KKPlatformHttpSessionManager:AFHTTPSessionManager
 
