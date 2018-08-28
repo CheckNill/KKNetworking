@@ -92,7 +92,7 @@ This is a network component.
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "*"
+  spec.source_files  = "KKNetworing/*"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -119,7 +119,7 @@ This is a network component.
   #
 
   # spec.framework  = "SomeFramework"
-  #spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
+  spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
