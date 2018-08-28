@@ -15,8 +15,8 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "KKNetworking"
-  spec.version      = "1.0.2"
+  spec.name         = "KKWNetworking"
+  spec.version      = "1.0.3"
   spec.summary      = "KKNetworking is a Network tool for our application."
 
   # This description is used to generate tags and improve search results.

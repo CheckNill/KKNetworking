@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "53D92847637DD6165BDB0F87CBD31D0D"
-               BuildableName = "Pods_KKNetworing.framework"
-               BlueprintName = "Pods-KKNetworing"
+               BlueprintIdentifier = "1C470528ACB1E1318B46B47BE7F84EAB"
+               BuildableName = "Pods_KKWNetworking.framework"
+               BlueprintName = "Pods-KKWNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "53D92847637DD6165BDB0F87CBD31D0D"
-            BuildableName = "Pods_KKNetworing.framework"
-            BlueprintName = "Pods-KKNetworing"
+            BlueprintIdentifier = "1C470528ACB1E1318B46B47BE7F84EAB"
+            BuildableName = "Pods_KKWNetworking.framework"
+            BlueprintName = "Pods-KKWNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

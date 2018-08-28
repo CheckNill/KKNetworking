@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_KKNetworingVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_KKNetworingVersionString[];
+FOUNDATION_EXPORT double Pods_KKWNetworkingVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_KKWNetworkingVersionString[];
 
