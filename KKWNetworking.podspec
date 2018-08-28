@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "KKWNetworking"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "KKNetworking is a Network tool for our application."
 
   # This description is used to generate tags and improve search results.
@@ -119,7 +119,7 @@ This is a network component.
   #
 
   # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
+   spec.frameworks = "MQTTClient", "MQTTClient/Websocket","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD"
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
