@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16172084D19E9399AA40ED3C /* Pods_KKNetworing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C0723762112A0D3218C9DE /* Pods_KKNetworing.framework */; };
 		83502B80A445367423C2D425 /* Pods_KKWNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCB5065C4799FB675C3702D /* Pods_KKWNetworking.framework */; };
 		EABFE9302134F1E20022D94A /* KKNetworing.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE92E2134F1E20022D94A /* KKNetworing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EABFE93A2134F2E30022D94A /* KKNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE9382134F2E30022D94A /* KKNetwork.h */; };
@@ -17,10 +16,7 @@
 
 /* Begin PBXFileReference section */
 		038EDD0BE8BF558F3EE74E45 /* Pods-KKWNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWNetworking.debug.xcconfig"; path = "Target Support Files/Pods-KKWNetworking/Pods-KKWNetworking.debug.xcconfig"; sourceTree = "<group>"; };
-		20B4171E193EB887A07A75AA /* Pods-KKNetworing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKNetworing.release.xcconfig"; path = "Target Support Files/Pods-KKNetworing/Pods-KKNetworing.release.xcconfig"; sourceTree = "<group>"; };
 		41F77A45CCD7AA42116249F2 /* Pods-KKWNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWNetworking.release.xcconfig"; path = "Target Support Files/Pods-KKWNetworking/Pods-KKWNetworking.release.xcconfig"; sourceTree = "<group>"; };
-		5CDAF93D1853559ACC6214D1 /* Pods-KKNetworing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKNetworing.debug.xcconfig"; path = "Target Support Files/Pods-KKNetworing/Pods-KKNetworing.debug.xcconfig"; sourceTree = "<group>"; };
-		E4C0723762112A0D3218C9DE /* Pods_KKNetworing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKNetworing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABFE92B2134F1E20022D94A /* KKWNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KKWNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABFE92E2134F1E20022D94A /* KKNetworing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNetworing.h; sourceTree = "<group>"; };
 		EABFE92F2134F1E20022D94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16172084D19E9399AA40ED3C /* Pods_KKNetworing.framework in Frameworks */,
 				83502B80A445367423C2D425 /* Pods_KKWNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,8 +42,6 @@
 		A43A69D28E8D3D5527A481C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5CDAF93D1853559ACC6214D1 /* Pods-KKNetworing.debug.xcconfig */,
-				20B4171E193EB887A07A75AA /* Pods-KKNetworing.release.xcconfig */,
 				038EDD0BE8BF558F3EE74E45 /* Pods-KKWNetworking.debug.xcconfig */,
 				41F77A45CCD7AA42116249F2 /* Pods-KKWNetworking.release.xcconfig */,
 			);
@@ -58,7 +51,6 @@
 		C957D629DDE11CFBD1D3F4EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4C0723762112A0D3218C9DE /* Pods_KKNetworing.framework */,
 				FCCB5065C4799FB675C3702D /* Pods_KKWNetworking.framework */,
 			);
 			name = Frameworks;
