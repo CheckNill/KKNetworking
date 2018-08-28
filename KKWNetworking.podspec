@@ -119,7 +119,7 @@ This is a network component.
   #
 
   # spec.framework  = "SomeFramework"
-   spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
+  #spec.frameworks = "MQTTClient","AFNetworking","Socket.IO-Client-Swift","SDWebImage","SVProgressHUD",
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
