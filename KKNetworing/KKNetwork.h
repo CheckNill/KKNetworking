@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
-//#import "SVProgressHUD.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface KKPlatformHttpSessionManager:AFHTTPSessionManager
 

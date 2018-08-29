@@ -17,17 +17,17 @@ const NSString* KKLoginPlatformFailNotification = @"KKLoginPlatformFailNotificat
 #define UserHasLogin @"userHasLogin"
 
 
-//#define //showNetMessage(type,msg) \
-//{void(^runOnMainThead)(void) = ^{\
-//if(type == 0)[SVProgressHUD dismiss];\
-//else if(type == 1)[SVProgressHUD showWithStatus:msg]; \
-//else if(type == 2)[SVProgressHUD showSuccessWithStatus:msg];\
-//else [SVProgressHUD showErrorWithStatus:msg];};\
-//if ( [NSThread isMainThread] )runOnMainThead();\
-//else dispatch_async( dispatch_get_main_queue(), runOnMainThead );}
-//
-//#define KKNet_STR(key, comment) NSLocalizedStringFromTable(key, @"KKNetworking", comment)
-//
+#define showNetMessage(type,msg) \
+{void(^runOnMainThead)(void) = ^{\
+if(type == 0)[SVProgressHUD dismiss];\
+else if(type == 1)[SVProgressHUD showWithStatus:msg]; \
+else if(type == 2)[SVProgressHUD showSuccessWithStatus:msg];\
+else [SVProgressHUD showErrorWithStatus:msg];};\
+if ( [NSThread isMainThread] )runOnMainThead();\
+else dispatch_async( dispatch_get_main_queue(), runOnMainThead );}
+
+#define KKNet_STR(key, comment) NSLocalizedStringFromTable(key, @"KKNetworking", comment)
+
 
 
 
@@ -227,7 +227,7 @@ static NSString *APPID = @"";
                     [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }else{
                     [KKNetwork showErrorMessageWithDic:error.userInfo url:url];//get
-                    //showNetMessage(showTypeNetError, @"");
+                    showNetMessage(showTypeNetError, @"");
                 }
             }
         }
@@ -257,9 +257,9 @@ static NSString *APPID = @"";
     if(!errorStr)return;
     NSRange range = [errorStr rangeOfString:@"oken"];
     if (range.location != NSNotFound) {
-//        errorStr = KKNet_STR(@"请重新输入密码", nil);
+        errorStr = KKNet_STR(@"请重新输入密码", nil);
     }
-    //showNetMessage(showTypeNetError, errorStr);
+    showNetMessage(showTypeNetError, errorStr);
 }
 
 /**测试ok,post请求*/
