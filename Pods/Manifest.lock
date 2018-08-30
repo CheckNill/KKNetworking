@@ -29,10 +29,7 @@ PODS:
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
-  - Socket.IO-Client-Swift (13.2.1):
-    - Starscream (~> 3.0.2)
   - SocketRocket (0.5.1)
-  - Starscream (3.0.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -41,7 +38,6 @@ DEPENDENCIES:
   - MQTTClient
   - MQTTClient/Websocket
   - SDWebImage (~> 4.2.2)
-  - Socket.IO-Client-Swift (~> 13.2.0)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -50,9 +46,7 @@ SPEC REPOS:
     - KKMediator
     - MQTTClient
     - SDWebImage
-    - Socket.IO-Client-Swift
     - SocketRocket
-    - Starscream
     - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -60,11 +54,9 @@ SPEC CHECKSUMS:
   KKMediator: 6a6ac8d83ecbc470f226a06b54a75abd061e62d3
   MQTTClient: 92ead4ac75687e7021bcf8d564ff37aaf950d631
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 4fea62e2cc674eb503055397f5a24d138c638ec8
+PODFILE CHECKSUM: bbf0cce4f2c2aae545c8feaee5d4fdcd48397700
 
 COCOAPODS: 1.6.0.beta.1
