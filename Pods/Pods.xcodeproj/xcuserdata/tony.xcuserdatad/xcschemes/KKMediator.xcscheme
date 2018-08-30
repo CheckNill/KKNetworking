@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "98DD1FD51388B1324CE88E0C26A77697"
-               BlueprintName = "SVProgressHUD"
+               BlueprintIdentifier = "0D27080B3711AA24C858947780ACE28D"
+               BlueprintName = "KKMediator"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SVProgressHUD.framework">
+               BuildableName = "KKMediator.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -15,7 +15,7 @@
 
 @end
 
-@interface KKNetwork : NSObject
+@interface KKWNetworking : NSObject
 //钱包后台
 @property (nonatomic,strong) AFHTTPSessionManager *manager;
 

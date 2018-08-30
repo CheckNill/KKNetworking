@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		83502B80A445367423C2D425 /* Pods_KKWNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCB5065C4799FB675C3702D /* Pods_KKWNetworking.framework */; };
-		EABFE9302134F1E20022D94A /* KKNetworing.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE92E2134F1E20022D94A /* KKNetworing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EABFE93A2134F2E30022D94A /* KKNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE9382134F2E30022D94A /* KKNetwork.h */; };
-		EABFE93B2134F2E30022D94A /* KKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFE9392134F2E30022D94A /* KKNetwork.m */; };
+		EABFE93A2134F2E30022D94A /* KKWNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE9382134F2E30022D94A /* KKWNetworking.h */; };
+		EABFE93B2134F2E30022D94A /* KKWNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFE9392134F2E30022D94A /* KKWNetworking.m */; };
 		EABFE9402135215D0022D94A /* KKNetworking.strings in Resources */ = {isa = PBXBuildFile; fileRef = EABFE9422135215D0022D94A /* KKNetworking.strings */; };
-		EABFE946213551C30022D94A /* KKNetworing.pch in Headers */ = {isa = PBXBuildFile; fileRef = EABFE945213551C30022D94A /* KKNetworing.pch */; };
+		EABFE9662137D5510022D94A /* KKMediator+KKWNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFE9642137D5510022D94A /* KKMediator+KKWNetworking.h */; };
+		EABFE9672137D5510022D94A /* KKMediator+KKWNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFE9652137D5510022D94A /* KKMediator+KKWNetworking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		038EDD0BE8BF558F3EE74E45 /* Pods-KKWNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWNetworking.debug.xcconfig"; path = "Target Support Files/Pods-KKWNetworking/Pods-KKWNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		41F77A45CCD7AA42116249F2 /* Pods-KKWNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWNetworking.release.xcconfig"; path = "Target Support Files/Pods-KKWNetworking/Pods-KKWNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		EABFE92B2134F1E20022D94A /* KKWNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KKWNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EABFE92E2134F1E20022D94A /* KKNetworing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNetworing.h; sourceTree = "<group>"; };
 		EABFE92F2134F1E20022D94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EABFE9382134F2E30022D94A /* KKNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNetwork.h; sourceTree = "<group>"; };
-		EABFE9392134F2E30022D94A /* KKNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNetwork.m; sourceTree = "<group>"; };
+		EABFE9382134F2E30022D94A /* KKWNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKWNetworking.h; sourceTree = "<group>"; };
+		EABFE9392134F2E30022D94A /* KKWNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKWNetworking.m; sourceTree = "<group>"; };
 		EABFE9412135215D0022D94A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/KKNetworking.strings; sourceTree = "<group>"; };
 		EABFE943213521C10022D94A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKNetworking.strings"; sourceTree = "<group>"; };
-		EABFE945213551C30022D94A /* KKNetworing.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNetworing.pch; sourceTree = "<group>"; };
+		EABFE9642137D5510022D94A /* KKMediator+KKWNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKMediator+KKWNetworking.h"; sourceTree = "<group>"; };
+		EABFE9652137D5510022D94A /* KKMediator+KKWNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KKMediator+KKWNetworking.m"; sourceTree = "<group>"; };
 		FCCB5065C4799FB675C3702D /* Pods_KKWNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKWNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,10 +79,10 @@
 		EABFE92D2134F1E20022D94A /* KKNetworing */ = {
 			isa = PBXGroup;
 			children = (
-				EABFE92E2134F1E20022D94A /* KKNetworing.h */,
-				EABFE9382134F2E30022D94A /* KKNetwork.h */,
-				EABFE9392134F2E30022D94A /* KKNetwork.m */,
-				EABFE945213551C30022D94A /* KKNetworing.pch */,
+				EABFE9642137D5510022D94A /* KKMediator+KKWNetworking.h */,
+				EABFE9652137D5510022D94A /* KKMediator+KKWNetworking.m */,
+				EABFE9382134F2E30022D94A /* KKWNetworking.h */,
+				EABFE9392134F2E30022D94A /* KKWNetworking.m */,
 				EABFE92F2134F1E20022D94A /* Info.plist */,
 				EABFE9422135215D0022D94A /* KKNetworking.strings */,
 			);
@@ -96,9 +96,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EABFE9302134F1E20022D94A /* KKNetworing.h in Headers */,
-				EABFE946213551C30022D94A /* KKNetworing.pch in Headers */,
-				EABFE93A2134F2E30022D94A /* KKNetwork.h in Headers */,
+				EABFE93A2134F2E30022D94A /* KKWNetworking.h in Headers */,
+				EABFE9662137D5510022D94A /* KKMediator+KKWNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EABFE93B2134F2E30022D94A /* KKNetwork.m in Sources */,
+				EABFE9672137D5510022D94A /* KKMediator+KKWNetworking.m in Sources */,
+				EABFE93B2134F2E30022D94A /* KKWNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +256,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/tony/Documents/KKWNetworking/KKNetworing/KKNetworing.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -320,8 +320,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/tony/Documents/KKWNetworking/KKNetworing/KKNetworing.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -350,8 +350,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/tony/Documents/KKWNetworking/KKNetworing/KKNetworing.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = KKNetworing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -379,8 +379,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/tony/Documents/KKWNetworking/KKNetworing/KKNetworing.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = KKNetworing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

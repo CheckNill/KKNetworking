@@ -1,12 +1,12 @@
 //
-//  KKNetwork.m
+//  KKWNetworking.m
 //  KKNetworing
 //
 //  Created by Tony on 2018/8/28.
 //  Copyright © 2018年 KK. All rights reserved.
 //
 
-#import "KKNetwork.h"
+#import "KKWNetworking.h"
 
 
 #pragma mark - Notification Keys
@@ -26,7 +26,7 @@ else [SVProgressHUD showErrorWithStatus:msg];};\
 if ( [NSThread isMainThread] )runOnMainThead();\
 else dispatch_async( dispatch_get_main_queue(), runOnMainThead );}
 
-#define KKNet_STR(key, comment) NSLocalizedStringFromTable(key, @"KKNetworking", comment)
+#define KKNet_STR(key, comment) NSLocalizedStringFromTable(key, @"KKWNetworkinging", comment)
 
 
 
@@ -38,7 +38,7 @@ typedef enum : NSUInteger {
     showTypeNetError
 } showTypeNet;
 
-static KKNetwork *network = nil;
+static KKWNetworking *network = nil;
 static NSString *KKBase_URL = @"";
 static NSString *KKBase_Safe = @"";
 static NSString *APP_SECRET = @"";
@@ -77,13 +77,13 @@ static NSString *APPID = @"";
 
 @end
 
-@interface KKNetwork ()
+@interface KKWNetworking ()
 
 @property (nonatomic, strong) NSMutableDictionary <NSString *,NSNumber *>*requestUrls;
 
 @end
 
-@implementation KKNetwork
+@implementation KKWNetworking
 
 
 
@@ -92,7 +92,7 @@ static NSString *APPID = @"";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if(!network){
-            network = [[KKNetwork alloc]init];
+            network = [[KKWNetworking alloc]init];
             //手机钱包后台
             network.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
             [network.manager.requestSerializer willChangeValueForKey:@"timeoutinterval"];
@@ -114,7 +114,7 @@ static NSString *APPID = @"";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if(!network){
-            network = [[KKNetwork alloc]init];            
+            network = [[KKWNetworking alloc]init];
             //手机钱包后台
             network.manager = [[AFHTTPSessionManager alloc] init];
             [network.manager.requestSerializer willChangeValueForKey:@"timeoutinterval"];
@@ -178,7 +178,7 @@ static NSString *APPID = @"";
 
 + (void)get:(NSString *)url param:(NSDictionary *)param relativeUser:(BOOL)relativeUser  success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
     
-    AFHTTPSessionManager *session = [KKNetwork shareInstance].manager;
+    AFHTTPSessionManager *session = [KKWNetworking shareInstance].manager;
 //    NSString *token = [KKAppInfoManager getTokenWithType:relativeUser];
     NSString *token = relativeUserToken;
     //传token
@@ -186,9 +186,9 @@ static NSString *APPID = @"";
         if(![self userHasLogin]){
             return;
         }
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }else{
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }//Authorization
     [session GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([responseObject isKindOfClass:[NSDictionary class]] && [responseObject[@"code"] integerValue] == 0){
@@ -201,7 +201,7 @@ static NSString *APPID = @"";
                 BOOL relog =  [self checkShouldReLoginForError:responseObject url:task.response.URL.absoluteString];
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }else{
                     if(failure){
                         failure([NSError errorWithDomain:responseObject[@"message"] code:[responseObject[@"code"] integerValue] userInfo:nil]);
@@ -231,9 +231,9 @@ static NSString *APPID = @"";
                 BOOL relog = ([self checkShouldReLoginForError:dic url:task.response.URL.absoluteString] || statusCode == 401) && relativeUser == YES;
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }else{
-                    [KKNetwork showErrorMessageWithDic:error.userInfo url:url];//get
+                    [KKWNetworking showErrorMessageWithDic:error.userInfo url:url];//get
                     showNetMessage(showTypeNetError, @"");
                 }
             }
@@ -278,14 +278,14 @@ static NSString *APPID = @"";
         if(![self userHasLogin]){
             return;
         }
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }else{
         if(token.length != 0){
-            [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+            [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
         }
     }
     
-    [[KKNetwork shareInstance].manager POST:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[KKWNetworking shareInstance].manager POST:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([responseObject isKindOfClass:[NSDictionary class]] && [responseObject[@"code"] integerValue] == 0){
             if(success){
                 success(responseObject);
@@ -295,7 +295,7 @@ static NSString *APPID = @"";
                 BOOL relog = [self checkShouldReLoginForError:responseObject url:task.response.URL.absoluteString];
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }
             }else{
                 if(failure){
@@ -311,9 +311,9 @@ static NSString *APPID = @"";
             BOOL relog = [self checkShouldReLoginForError:dic url:task.response.URL.absoluteString];
             if (!relog) {
                 // 不需重登录，但要新获取接口2.1的token
-                [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
             }else{
-                [KKNetwork showErrorMessageWithDic:error.userInfo url:url];//post
+                [KKWNetworking showErrorMessageWithDic:error.userInfo url:url];//post
             }
         }
         if(failure){
@@ -333,14 +333,14 @@ static NSString *APPID = @"";
             return;
         }
         
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }else{
         
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }
     NSLog(@"request url is : %@",url);
     
-    [[KKNetwork shareInstance].manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [[KKWNetworking shareInstance].manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         if(block){
             block(formData);
         }
@@ -356,7 +356,7 @@ static NSString *APPID = @"";
                 BOOL relog = [self checkShouldReLoginForError:responseObject url:task.response.URL.absoluteString];
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }
             }else{
                 if(failure){
@@ -371,7 +371,7 @@ static NSString *APPID = @"";
             BOOL relog = [self checkShouldReLoginForError:dic url:task.response.URL.absoluteString];
             if (!relog) {
                 // 不需重登录，但要新获取接口2.1的token
-                [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
             }
         }
         if(failure){
@@ -391,13 +391,13 @@ static NSString *APPID = @"";
         if(![self userHasLogin]){
             return;
         }
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }else{
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }
     
     NSLog(@"request url is : %@",url);
-    [KKNetwork.shareInstance.manager DELETE:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.manager DELETE:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([responseObject isKindOfClass:[NSDictionary class]] && [responseObject[@"code"] integerValue] == 0){
             if(success){
                 success(responseObject);
@@ -407,7 +407,7 @@ static NSString *APPID = @"";
                 BOOL relog =  [self checkShouldReLoginForError:responseObject url:task.response.URL.absoluteString];
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }
             }else{
                 if(failure){
@@ -422,7 +422,7 @@ static NSString *APPID = @"";
             BOOL relog = [self checkShouldReLoginForError:dic url:task.response.URL.absoluteString];
             if (!relog) {
                 // 不需重登录，但要新获取接口2.1的token
-                [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
             }
         }
         if(failure){
@@ -441,14 +441,14 @@ static NSString *APPID = @"";
             return;
         }
         
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }else{
         
-        [[KKNetwork shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+        [[KKWNetworking shareInstance].manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
     }
     
     NSLog(@"request url is : %@",url);
-    [[KKNetwork shareInstance].manager PUT:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[KKWNetworking shareInstance].manager PUT:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([responseObject isKindOfClass:[NSDictionary class]] && [responseObject[@"code"] integerValue] == 0){
             if(success){
                 success(responseObject);
@@ -458,7 +458,7 @@ static NSString *APPID = @"";
                 BOOL relog = [self checkShouldReLoginForError:responseObject url:task.response.URL.absoluteString];
                 if (!relog) {
                     // 不需重登录，但要新获取接口2.1的token
-                    [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                    [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }
             }else{
                 if(failure){
@@ -473,7 +473,7 @@ static NSString *APPID = @"";
             BOOL relog = [self checkShouldReLoginForError:dic url:task.response.URL.absoluteString];
             if (!relog) {
                 // 不需重登录，但要新获取接口2.1的token
-                [KKNetwork getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
+                [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
             }
         }
         if(failure){
@@ -560,7 +560,7 @@ static NSString *APPID = @"";
 //https://api.etherscan.io/api
 
 +(void)getEthereumBalanceWithParameters:(NSDictionary *)parameters success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
-    [KKNetwork.shareInstance.manager GET:@"http://api.etherscan.io/api" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.manager GET:@"http://api.etherscan.io/api" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
@@ -586,8 +586,8 @@ static NSString *APPID = @"";
 
 +(void)getDealWithParameters:(NSDictionary *)parameters success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
     
-    //    [[KKNetwork shareInstance].manager.requestSerializer setValue:@"" forHTTPHeaderField:Authorization];
-    [KKNetwork.shareInstance.manager GET:@"http://api.etherscan.io/api" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    //    [[KKWNetworking shareInstance].manager.requestSerializer setValue:@"" forHTTPHeaderField:Authorization];
+    [KKWNetworking.shareInstance.manager GET:@"http://api.etherscan.io/api" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
@@ -595,7 +595,7 @@ static NSString *APPID = @"";
         //NSDictionary *data = [responseObject objectForKey:@"data"];
         //self.randomStr = [data objectForKey:@"random_string"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [KKNetwork showErrorMessageWithDic:error.userInfo url:@"http://api.etherscan.io/api"];//get
+        [KKWNetworking showErrorMessageWithDic:error.userInfo url:@"http://api.etherscan.io/api"];//get
         if(failure){
             failure(error);
         }
@@ -636,13 +636,13 @@ static NSString *APPID = @"";
     //    url = [NSString stringWithFormat:@"http://192.168.8.55:8889/api/v1/txs?address=1BW18n7MfpU35q4MTBSk8pse3XzQF8XvzT&limit=10&order=-1&prevminkey=&prevmaxkey"];
 //    NSString *url = [NSString stringWithFormat:@"%@%@%@",TestDomainPort54_8889,Api_v1,Session_get_btc_record(parameters[@"address"],10,-1)];
     //    NSString *url = [NSString stringWithFormat:@"http://192.168.8.54:8889/api/v1/txs?address=%@&limit=10&order=-1&prevminkey=&prevmaxkey",parameters[@"address"]];
-    [KKNetwork.shareInstance.manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //    [KKNetwork.shareInstance.manager GET:@"https://blockexplorer.com/api/txs/" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //    [KKWNetworking.shareInstance.manager GET:@"https://blockexplorer.com/api/txs/" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [KKNetwork showErrorMessageWithDic:error.userInfo url:@"https://blockexplorer.com/api"];//get
+        [KKWNetworking showErrorMessageWithDic:error.userInfo url:@"https://blockexplorer.com/api"];//get
         if(failure){
             failure(error);
         }
@@ -665,12 +665,12 @@ static NSString *APPID = @"";
             url = [NSString stringWithFormat:@"%@%@,",url,parameters[i]];
         }
     }
-    [KKNetwork.shareInstance.manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [KKNetwork showErrorMessageWithDic:error.userInfo url:@"https://blockexplorer.com/api"];//get
+        [KKWNetworking showErrorMessageWithDic:error.userInfo url:@"https://blockexplorer.com/api"];//get
         if(failure){
             failure(error);
         }
@@ -685,7 +685,7 @@ static NSString *APPID = @"";
  *注意: 请求首部 Authorization 需要携带登录接口返回的token
  */
 +(void)getSecurityWithSuccess:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
-    [KKNetwork getSafe:@"user/api/v1/account/security" param:nil success:^(id respectObj) {
+    [KKWNetworking getSafe:@"user/api/v1/account/security" param:nil success:^(id respectObj) {
         if (success) success(respectObj);
     } failure:^(NSError *error) {
         if (failure) failure(error);
@@ -696,8 +696,8 @@ static NSString *APPID = @"";
 + (void)resetPwd:(NSString *)url param:(NSDictionary *)param token:(NSString *)token success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
     NSLog(@"request url is : %@",url);
     
-    [KKNetwork.shareInstance.platformManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
-    [KKNetwork putSafe:url param:param success:^(id respectObj) {
+    [KKWNetworking.shareInstance.platformManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:Authorization];
+    [KKWNetworking putSafe:url param:param success:^(id respectObj) {
         
         if(success){
             success(respectObj);
@@ -737,7 +737,7 @@ static NSString *APPID = @"";
 
 + (void)getSafe:(NSString *)url param:(NSDictionary *)param success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
     
-    [KKNetwork.shareInstance.platformManager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.platformManager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSLog(@"get ok");
         
@@ -763,7 +763,7 @@ static NSString *APPID = @"";
     
     NSLog(@"request url is : %@",url);
     
-    [KKNetwork.shareInstance.platformManager PUT:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.platformManager PUT:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if([responseObject[@"statusCode"] intValue] == 0){
             if(success){
@@ -786,7 +786,7 @@ static NSString *APPID = @"";
     
     NSLog(@"request url is : %@",url);
     
-    [KKNetwork.shareInstance.platformManager POST:url parameters:param progress:nil success:^(NSURLSessionDataTask *  _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.platformManager POST:url parameters:param progress:nil success:^(NSURLSessionDataTask *  _Nonnull task, id  _Nullable responseObject) {
         
         
         if([responseObject[@"statusCode"] intValue] == 0){
@@ -809,7 +809,7 @@ static NSString *APPID = @"";
     
     NSLog(@"request url is : %@",url);
     
-    [KKNetwork.shareInstance.platformManager DELETE:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [KKWNetworking.shareInstance.platformManager DELETE:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if([responseObject[@"statusCode"] intValue] == 0){
             if(success){
@@ -896,7 +896,7 @@ static NSString *APPID = @"";
 + (void)getLoginTokenAndSaveWithAddressKey:(NSString *)userName success:(void(^)(id respectObj))success failure:(void(^)(NSError *error))failure{
     
     NSDictionary *parameters = @{@"app_id":APPID,@"app_secret":APP_SECRET};
-    [KKNetwork post:@"application/login" param:parameters relativeUser:NO success:^(id respectObj) {
+    [KKWNetworking post:@"application/login" param:parameters relativeUser:NO success:^(id respectObj) {
         if(success){
             NSDictionary *data = [respectObj objectForKey:@"data"];
             // warning:这里如果扩展多钱包,单键值不能满足要求了,要组合键值:和地址绑定关系

@@ -1,0 +1,6 @@
+framework module KKMediator {
+  umbrella header "KKMediator-umbrella.h"
+
+  export *
+  module * { export * }
+}
