@@ -9,7 +9,7 @@ target 'KKWNetworking' do
   pod 'AFNetworking'
 #  pod 'Socket.IO-Client-Swift', '~> 13.2.0'
   pod 'SDWebImage', '~> 4.2.2'
-  pod 'SVProgressHUD'
+#  pod 'SVProgressHUD'
   pod 'KKMediator','~>1.0.0'
   # Pods for KKNetworing
 
