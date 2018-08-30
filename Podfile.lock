@@ -15,26 +15,20 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - KKMediator (1.0.0)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
 
 DEPENDENCIES:
   - AFNetworking
   - KKMediator (~> 1.0.0)
-  - SDWebImage (~> 4.2.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - KKMediator
-    - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   KKMediator: 6a6ac8d83ecbc470f226a06b54a75abd061e62d3
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: 6d3b70e4693a6f2a866b94214dbca758043421a5
+PODFILE CHECKSUM: 871252045306f7f4d8cb8e81d20b2776252226ab
 
 COCOAPODS: 1.6.0.beta.1
