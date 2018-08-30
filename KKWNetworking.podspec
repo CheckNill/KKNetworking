@@ -16,13 +16,10 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "KKWNetworking"
-<<<<<<< HEAD
-  spec.version      = "0.0.1"
-  spec.summary      = "A short description of KKWNetworking."
-=======
+
   spec.version      = "1.1.0"
   spec.summary      = "KKNetworking is a Network tool for our application."
->>>>>>> 8eed983a75e2db5a36bef2363c8204e8698ba1e9
+
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -134,16 +131,10 @@ Pod::Spec.new do |spec|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-<<<<<<< HEAD
-  # spec.requires_arc = true
 
-  # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
-=======
  # spec.requires_arc = true
  # spec.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
  spec.dependency 'AFNetworking','SVProgressHUD','MQTTClient','MQTTClient/Websocket','AFNetworking','SDWebImage'
->>>>>>> 8eed983a75e2db5a36bef2363c8204e8698ba1e9
 
 end
