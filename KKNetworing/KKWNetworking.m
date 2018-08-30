@@ -132,13 +132,6 @@ static NSString *APPID = @"";
     return network;
 }
 
-- (SocketManager *)socketManager{
-    if(!_socketManager){
-        _socketManager = [[SocketManager alloc] initWithSocketURL:[NSURL URLWithString:@"http://api.test.arecash.net"] config:@{@"path":@"/market/websocket/socket.io"}];
-    }
-    return _socketManager;
-}
-
 + (NSString *)reLoginPrefix{
     return @"401";
 }

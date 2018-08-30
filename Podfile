@@ -7,7 +7,7 @@ target 'KKWNetworking' do
   pod 'MQTTClient'
   pod 'MQTTClient/Websocket'
   pod 'AFNetworking'
-  pod 'Socket.IO-Client-Swift', '~> 13.2.0'
+#  pod 'Socket.IO-Client-Swift', '~> 13.2.0'
   pod 'SDWebImage', '~> 4.2.2'
   pod 'SVProgressHUD'
   pod 'KKMediator','~>1.0.0'
