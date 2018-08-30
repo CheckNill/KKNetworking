@@ -135,6 +135,6 @@ Pod::Spec.new do |spec|
  # spec.requires_arc = true
  # spec.public_header_files = "AFNetworking.h","SocketIO/SocketIO-Swift.h","SVProgressHUD.h"
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
- spec.dependency 'AFNetworking','SDWebImage'
+ spec.dependency 'AFNetworking'
 
 end
