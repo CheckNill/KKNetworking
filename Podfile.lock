@@ -15,28 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - KKMediator (1.0.0)
-  - MQTTClient (0.15.1):
-    - MQTTClient/Core (= 0.15.1)
-  - MQTTClient/Core (0.15.1):
-    - MQTTClient/Manager
-    - MQTTClient/Min
-  - MQTTClient/Manager (0.15.1):
-    - MQTTClient/Min
-  - MQTTClient/Min (0.15.1)
-  - MQTTClient/Websocket (0.15.1):
-    - MQTTClient/Min
-    - SocketRocket
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
-  - SocketRocket (0.5.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - KKMediator (~> 1.0.0)
-  - MQTTClient
-  - MQTTClient/Websocket
   - SDWebImage (~> 4.2.2)
   - SVProgressHUD
 
@@ -44,19 +30,15 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - KKMediator
-    - MQTTClient
     - SDWebImage
-    - SocketRocket
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   KKMediator: 6a6ac8d83ecbc470f226a06b54a75abd061e62d3
-  MQTTClient: 92ead4ac75687e7021bcf8d564ff37aaf950d631
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: bbf0cce4f2c2aae545c8feaee5d4fdcd48397700
+PODFILE CHECKSUM: cf500a5acd26ba2e75158a81fcb345ce443cbc1d
 
 COCOAPODS: 1.6.0.beta.1
