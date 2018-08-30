@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12D3E0DD78927D17219BB99140324724"
-               BlueprintName = "Pods-KKWNetworking"
+               BlueprintIdentifier = "514B93D5DF01A20FCA5F4D6651F3DFD6"
+               BlueprintName = "Starscream"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-KKWNetworking.framework">
+               BuildableName = "Starscream.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

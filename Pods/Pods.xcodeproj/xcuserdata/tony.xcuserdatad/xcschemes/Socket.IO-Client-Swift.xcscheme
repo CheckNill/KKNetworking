@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12D3E0DD78927D17219BB99140324724"
-               BlueprintName = "Pods-KKWNetworking"
+               BlueprintIdentifier = "6F737476C00D06CCBD195F14314F5B91"
+               BlueprintName = "Socket.IO-Client-Swift"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-KKWNetworking.framework">
+               BuildableName = "Socket.IO-Client-Swift.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

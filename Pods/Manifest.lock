@@ -15,20 +15,28 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - KKMediator (1.0.0)
+  - Socket.IO-Client-Swift (13.2.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.5)
 
 DEPENDENCIES:
   - AFNetworking
   - KKMediator (~> 1.0.0)
+  - Socket.IO-Client-Swift (~> 13.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - KKMediator
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   KKMediator: 6a6ac8d83ecbc470f226a06b54a75abd061e62d3
+  Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: 871252045306f7f4d8cb8e81d20b2776252226ab
+PODFILE CHECKSUM: 79b5120e2da85860046b961211f1b68f09af0bd4
 
 COCOAPODS: 1.6.0.beta.1
