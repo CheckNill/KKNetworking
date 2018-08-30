@@ -18,11 +18,13 @@ PODS:
   - Socket.IO-Client-Swift (13.2.1):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.5)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - KKMediator (~> 1.0.0)
   - Socket.IO-Client-Swift (~> 13.2.0)
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,13 +32,15 @@ SPEC REPOS:
     - KKMediator
     - Socket.IO-Client-Swift
     - Starscream
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   KKMediator: 6a6ac8d83ecbc470f226a06b54a75abd061e62d3
   Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 79b5120e2da85860046b961211f1b68f09af0bd4
+PODFILE CHECKSUM: 6e998825b1342cd1e0bd0ffcc4db75688e374643
 
 COCOAPODS: 1.6.0.beta.1

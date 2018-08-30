@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB4F3ED59FBAAF6518C11639855F81A7"
-               BlueprintName = "Socket.IO-Client-Swift"
+               BlueprintIdentifier = "F8E03717174765E04A071A8B0F4FF8FB"
+               BlueprintName = "SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Socket.IO-Client-Swift.framework">
+               BuildableName = "SVProgressHUD.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

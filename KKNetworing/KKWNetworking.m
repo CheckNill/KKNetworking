@@ -17,7 +17,7 @@ const NSString* KKLoginPlatformFailNotification = @"KKLoginPlatformFailNotificat
 #define UserHasLogin @"userHasLogin"
 
 
-//#define showNetMessage(type,msg) \
+#define showNetMessage(type,msg) \
 {void(^runOnMainThead)(void) = ^{\
 if(type == 0)[SVProgressHUD dismiss];\
 else if(type == 1)[SVProgressHUD showWithStatus:msg]; \
@@ -227,7 +227,7 @@ static NSString *APPID = @"";
                     [KKWNetworking getLoginTokenAndSaveWithAddressKey:nil success:nil failure:nil];
                 }else{
                     [KKWNetworking showErrorMessageWithDic:error.userInfo url:url];//get
-                    //showNetMessage(showTypeNetError, @"");
+                    showNetMessage(showTypeNetError, @"");
                 }
             }
         }
@@ -259,7 +259,7 @@ static NSString *APPID = @"";
     if (range.location != NSNotFound) {
         errorStr = KKNet_STR(@"请重新输入密码", nil);
     }
-    //showNetMessage(showTypeNetError, errorStr);
+    showNetMessage(showTypeNetError, errorStr);
 }
 
 /**测试ok,post请求*/
